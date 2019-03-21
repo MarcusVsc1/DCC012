@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1553212006 source:/ice/Downloads/Aula2103/main.cpp
+	<iostream>
+	<sstream>
+	<fstream>
+	<cstdlib>
+
