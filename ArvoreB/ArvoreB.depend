@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1558654109 source:/ice/tmp/ArvoreB/main.cpp
+	<iostream>
+
+1558653876 source:/ice/tmp/ArvoreB/src/ArvoreB.cpp
+	"ArvoreB.h"
+	"Pagina.h"
+
+1558653835 /ice/tmp/ArvoreB/include/ArvoreB.h
+	"Pagina.h"
+
+1558653367 source:/ice/tmp/ArvoreB/src/Pagina.cpp
+	"Pagina.h"
+
+1558655481 /ice/tmp/ArvoreB/include/Pagina.h
+
