@@ -1,16 +1,19 @@
 # depslib dependency file v1.0
-1446667744 source:c:\users\john\documents\projetos codeblocks\trieternaria\main.cpp
+1559856670 source:c:\users\john\documents\projetos codeblocks\trieternaria\main.cpp
 	<iostream>
-
-1559781644 source:c:\users\john\documents\projetos codeblocks\trieternaria\src\notrieternaria.cpp
+	"TrieTernaria.h"
 	"NoTrieTernaria.h"
 
-1559781646 c:\users\john\documents\projetos codeblocks\trieternaria\include\notrieternaria.h
+1559782943 source:c:\users\john\documents\projetos codeblocks\trieternaria\src\notrieternaria.cpp
+	"NoTrieTernaria.h"
 
-1559780068 source:c:\users\john\documents\projetos codeblocks\trieternaria\src\trieternaria.cpp
+1559782919 c:\users\john\documents\projetos codeblocks\trieternaria\include\notrieternaria.h
+
+1559856893 source:c:\users\john\documents\projetos codeblocks\trieternaria\src\trieternaria.cpp
 	"TrieTernaria.h"
+	<iostream>
 
-1559779645 c:\users\john\documents\projetos codeblocks\trieternaria\include\trieternaria.h
+1559848694 c:\users\john\documents\projetos codeblocks\trieternaria\include\trieternaria.h
 	"NoTrieTernaria.h"
 	<string>
 

@@ -1,5 +1,5 @@
 #include "TrieTernaria.h"
-
+#include <iostream>
 TrieTernaria::TrieTernaria()
 {
     raiz = NULL;
@@ -18,6 +18,7 @@ void TrieTernaria::inserir(string frase)
 
 NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int posicao)
 {
+    cout << "rodou."<<endl;
     if(posicao == frase.size())
     {
         return no;
@@ -25,13 +26,16 @@ NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int p
 
     if(no == NULL)
     {
+        cout << "Inseriu "<<frase[posicao] <<endl;
         no = new NoTrieTernaria(frase[posicao]);
-        no->setProx(auxInserir(no,frase,posicao+1));
+        no->setProx(auxInserir(NULL,frase,posicao+1));
     }
     else
     {
+        cout << frase[posicao] <<endl;
         if(no->getValor() == frase[posicao])
             {
+                cout <<frase[posicao]<<" ja existe." <<endl;
                 no->setProx(auxInserir(no->getProx(),frase,posicao+1));
             }
         if(no->getValor() > frase[posicao])
@@ -44,11 +48,11 @@ NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int p
             }
     }
 
-    if(posicao == frase.size()-1)//chegou no final da string
+    if(posicao == frase.size() && no->getValor() == frase[posicao])//chegou no final da string e encontrou ultimo valor
     {
+        cout << "Inseriu fim com sucesso."<<endl;
         no->setFim(true);
     }
-
     return no;
 
 }
@@ -61,19 +65,43 @@ bool TrieTernaria::busca(string frase)
 
 bool TrieTernaria::auxBusca(NoTrieTernaria* no, string frase, int posicao)
 {
+
+
     if(no == NULL)
     {
+        if(posicao==0)
+        {
+            cout << "Chave nao existe na Trie!" << endl;
+        }
+        else
+        {
+            cout << "Chave parcialmente encontrada!" << endl;
+        }
         return false;
     }
 
-    if(posicao == frase.size()-1)
-    {
-        return no->getFim() == true;
-    }
+
+
 
     if(no->getValor() == frase[posicao])
     {
-        return auxBusca(no->getProx(),frase,posicao+1);
+        cout << "Encontrou parte da chave! "<<frase[posicao]<<endl;
+        posicao++;
+        if(posicao == frase.size())
+        {
+            if(no->getFim() == true)
+            {
+                cout << "Chave encontrada!" << endl;
+                return true;
+            }
+            else
+            {
+                cout << "Elementos da chave foram encontrados, porem chave nao faz parte da arvore!" << endl;;
+                return false;
+            }
+
+        }
+        return auxBusca(no->getProx(),frase,posicao);
     }
     else
     {
@@ -86,5 +114,10 @@ bool TrieTernaria::auxBusca(NoTrieTernaria* no, string frase, int posicao)
             return auxBusca(no->getEsq(),frase,posicao);
         }
     }
+
+}
+
+void TrieTernaria::impressao()
+{
 
 }

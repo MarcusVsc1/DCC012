@@ -16,6 +16,7 @@ class TrieTernaria
         NoTrieTernaria* auxInserir(NoTrieTernaria* no, string frase, int posicao);
         bool busca(string frase);
         bool auxBusca(NoTrieTernaria* no, string frase, int posicao);
+        void impressao();
 
 
     private:
