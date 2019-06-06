@@ -17,6 +17,10 @@ class TrieTernaria
         bool busca(string frase);
         bool auxBusca(NoTrieTernaria* no, string frase, int posicao);
         void impressao();
+        bool vazia();
+        void auxDelete(NoTrieTernaria* p);
+        void removerChave(string chave);
+        void auxRemover(NoTrieTernaria* no, string chave, int posicao);
 
 
     private:

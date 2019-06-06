@@ -4,6 +4,8 @@
 	"TrieTernaria.h"
 	"NoTrieTernaria.h"
 
+1559782943 naria.h"
+
 1559782943 source:c:\users\john\documents\projetos codeblocks\trieternaria\src\notrieternaria.cpp
 	"NoTrieTernaria.h"
 
@@ -13,7 +15,27 @@
 	"TrieTernaria.h"
 	<iostream>
 
+1559848694 
+
 1559848694 c:\users\john\documents\projetos codeblocks\trieternaria\include\trieternaria.h
 	"NoTrieTernaria.h"
 	<string>
+
+1559863597 source:/ice/DCC012-master/TrieTernaria/main.cpp
+	<iostream>
+	"TrieTernaria.h"
+	"NoTrieTernaria.h"
+
+1559864838 /ice/DCC012-master/TrieTernaria/include/TrieTernaria.h
+	"NoTrieTernaria.h"
+	<string>
+
+1559857076 /ice/DCC012-master/TrieTernaria/include/NoTrieTernaria.h
+
+1559857076 source:/ice/DCC012-master/TrieTernaria/src/NoTrieTernaria.cpp
+	"NoTrieTernaria.h"
+
+1559863443 source:/ice/DCC012-master/TrieTernaria/src/TrieTernaria.cpp
+	"TrieTernaria.h"
+	<iostream>
 

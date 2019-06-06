@@ -7,7 +7,20 @@ TrieTernaria::TrieTernaria()
 
 TrieTernaria::~TrieTernaria()
 {
-    //dtor
+    auxDelete(raiz);
+}
+
+void TrieTernaria::auxDelete(NoTrieTernaria* p)
+{
+    if(p!=NULL)
+    {
+        auxDelete(p->getDir());
+        auxDelete(p->getEsq());
+        auxDelete(p->getProx());
+        delete p;
+    }
+
+
 }
 
 
@@ -18,7 +31,7 @@ void TrieTernaria::inserir(string frase)
 
 NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int posicao)
 {
-    cout << "rodou."<<endl;
+
     if(posicao == frase.size())
     {
         return no;
@@ -32,7 +45,7 @@ NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int p
     }
     else
     {
-        cout << frase[posicao] <<endl;
+
         if(no->getValor() == frase[posicao])
             {
                 cout <<frase[posicao]<<" ja existe." <<endl;
@@ -48,11 +61,14 @@ NoTrieTernaria* TrieTernaria::auxInserir(NoTrieTernaria* no, string frase, int p
             }
     }
 
-    if(posicao == frase.size() && no->getValor() == frase[posicao])//chegou no final da string e encontrou ultimo valor
+    cout << "Valor do no: " << no->getValor() << " valor na chave: " << frase[posicao] << endl;
+
+    if(posicao == frase.size()-1 && no->getValor() == frase[posicao])//chegou no final da string e encontrou ultimo valor
     {
-        cout << "Inseriu fim com sucesso."<<endl;
+        cout << "Inseriu fim com sucesso. Valor do no: "<< no->getValor() <<endl;
         no->setFim(true);
     }
+
     return no;
 
 }
@@ -82,13 +98,14 @@ bool TrieTernaria::auxBusca(NoTrieTernaria* no, string frase, int posicao)
 
 
 
-
+    cout << no->getFim() << endl;
     if(no->getValor() == frase[posicao])
     {
         cout << "Encontrou parte da chave! "<<frase[posicao]<<endl;
         posicao++;
         if(posicao == frase.size())
         {
+
             if(no->getFim() == true)
             {
                 cout << "Chave encontrada!" << endl;
@@ -118,6 +135,35 @@ bool TrieTernaria::auxBusca(NoTrieTernaria* no, string frase, int posicao)
 }
 
 void TrieTernaria::impressao()
+{
+
+}
+
+bool TrieTernaria::vazia()
+{
+    return raiz == NULL;
+}
+
+void TrieTernaria::removerChave(string chave)
+{
+    NoTrieTernaria* p = raiz;
+
+    while(p->getValor() != chave[0] && p != NULL)
+    {
+        if(p->getValor() > chave[0])
+        {
+            p = p->getDir();
+        }
+        else
+        {
+            p = p->getEsq();
+        }
+    }
+
+    auxRemover(p,chave,0);
+}
+
+void TrieTernaria::auxRemover(NoTrieTernaria* no, string chave, int posicao)
 {
 
 }

@@ -11,8 +11,9 @@ int main()
 
     TrieTernaria* arvore = new TrieTernaria();
     arvore->inserir("pudim");
-        cout << "Hello world!" << endl;
-    bool deu = arvore->busca("pudim");
-    cout<< "Sera?";
+    arvore->inserir("chucrute");
+    arvore->inserir("banana");
+    bool deu = arvore->busca("chucrute");
     return 0;
+
 }
